@@ -1,8 +1,8 @@
 // Copyright Shalom Aloni
 
-#include "TankPlayerController.h"
+#include "TankAIController.h"
 
-void ATankPlayerController::BeginPlay()
+void ATankAIController::BeginPlay()
 {
 	Super::BeginPlay();
 	if (GetControlledTank())
@@ -11,7 +11,9 @@ void ATankPlayerController::BeginPlay()
 	}
 }
 
-ATank* ATankPlayerController::GetControlledTank() const
+ATank* ATankAIController::GetControlledTank() const
 {
 	return Cast<ATank>(GetPawn()); //Get the controlled pawn which is of a "Tank" type
 }
+
+
