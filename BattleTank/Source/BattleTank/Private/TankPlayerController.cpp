@@ -7,7 +7,7 @@ void ATankPlayerController::BeginPlay()
 	Super::BeginPlay();
 	if (GetControlledTank())
 	{
-		UE_LOG(LogTemp, Warning, TEXT("AI Tank Reporting Tank: %s"), *GetControlledTank()->GetName())
+		UE_LOG(LogTemp, Warning, TEXT("Player Tank Reporting: %s"), *GetControlledTank()->GetName())
 	}
 }
 
