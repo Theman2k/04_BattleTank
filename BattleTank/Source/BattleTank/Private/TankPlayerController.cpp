@@ -5,13 +5,20 @@
 void ATankPlayerController::BeginPlay()
 {
 	Super::BeginPlay();
-	if (GetControlledTank())
-	{
-		UE_LOG(LogTemp, Warning, TEXT("Player Tank Reporting: %s"), *GetControlledTank()->GetName())
-	}
+}
+
+void ATankPlayerController::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	AimTowardsCrosshair();
 }
 
 ATank* ATankPlayerController::GetControlledTank() const
 {
 	return Cast<ATank>(GetPawn()); //Get the controlled pawn which is of a "Tank" type
+}
+
+void ATankPlayerController::AimTowardsCrosshair()
+{
+	return;
 }

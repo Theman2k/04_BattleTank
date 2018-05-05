@@ -6,14 +6,6 @@
 void ATankAIController::BeginPlay()
 {
 	Super::BeginPlay();
-	if (GetControlledTank())
-	{
-		UE_LOG(LogTemp, Warning, TEXT("AI Tank Reporting: %s"), *GetControlledTank()->GetName())
-	}
-	if (GetPlayerTank())
-	{
-		UE_LOG(LogTemp, Warning, TEXT("AI Tank Aiming at: %s"), *GetPlayerTank()->GetName())
-	}
 }
 
 ATank* ATankAIController::GetControlledTank() const
