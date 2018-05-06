@@ -17,5 +17,3 @@ ATank * ATankAIController::GetPlayerTank() const
 {
 	return Cast<ATank>(GetWorld()->GetFirstPlayerController()->GetPawn()); //Get the PLAYER controlled pawn which is of a "Tank" type
 }
-
-

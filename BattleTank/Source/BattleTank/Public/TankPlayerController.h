@@ -20,7 +20,16 @@ public:
 	virtual void Tick(float DeltaSeconds) override;
 
 private:
-	//UPROPERTY(VisiableAnywhere, Category="Setup Player Controller")
+	ATankPlayerController();
 	ATank* GetControlledTank() const;
 	void AimTowardsCrosshair();
+	bool GetRayTraceHitLocation(FVector &HitLocation) const;
+	FVector HitLocation;
+
+	UPROPERTY(EditDefaultsOnly, Category = "Tank UI")
+		float CrosshairXLocation;
+	UPROPERTY(EditDefaultsOnly, Category = "Tank UI")
+		float CrosshairYLocation;
+	UPROPERTY(EditDefaultsOnly, Category = "Tank UI")
+		float TraceReach;
 };
