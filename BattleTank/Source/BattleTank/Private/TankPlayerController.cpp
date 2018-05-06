@@ -31,8 +31,7 @@ void ATankPlayerController::AimTowardsCrosshair()
 {
 	if (GetRayTraceHitLocation(HitLocation))
 	{
-		//UE_LOG(LogTemp, Warning, TEXT("Deproject"))
-		//AimAt();
+		GetControlledTank()->AimAt(HitLocation);
 	}
 
 	return;

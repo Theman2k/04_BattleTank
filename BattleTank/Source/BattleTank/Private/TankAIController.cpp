@@ -6,9 +6,20 @@
 void ATankAIController::BeginPlay()
 {
 	Super::BeginPlay();
+	PlayerControlledTank = GetPlayerTank();
 }
 
-ATank* ATankAIController::GetControlledTank() const
+void ATankAIController::Tick(float DeltaTime)
+{
+	Super::Tick(DeltaTime);
+	if (PlayerControlledTank.IsValid())
+	{
+		//TODO Move towards the player
+		GetAITank()->AimAt(PlayerControlledTank->GetActorLocation());
+	}
+}
+
+ATank* ATankAIController::GetAITank() const
 {
 	return Cast<ATank>(GetPawn()); //Get the controlled pawn which is of a "Tank" type
 }
